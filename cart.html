@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cart | Handmade Craft Gifts</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- ================= HEADER ================= -->
+  <header class="header">
+    <div class="container header-inner">
+      
+      <a href="index.html" class="logo" style="display:flex; align-items:center; gap:10px; text-decoration:none;">
+        <img src="assets/logo.png" alt="ARDHAM" style="height:50px;">
+        <div style="display:flex; flex-direction:column; line-height:1;">
+          <span style="font-size:22px; font-weight:700; letter-spacing:1px; color:#82183f;">
+            ARDHAM
+          </span>
+          <span style="font-size:13px; color:#9f3d57; letter-spacing:2px; text-transform:lowercase;">
+            atelier petals
+          </span>
+        </div>
+      </a>
+
+      <nav class="nav">
+        <a href="index.html">Home</a>
+        <a href="products.html">Shop</a>
+        <a href="cart.html">Cart</a>
+        <a href="customize.html">Customize</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+
+  <!-- ================= MAIN ================= -->
+  <main>
+    <section class="section">
+      <div class="container">
+
+        <h1 style="font-family: var(--font-display); margin-bottom: 2rem; text-align: center;">
+          Your Cart
+        </h1>
+
+        <!-- Cart items injected here -->
+        <div id="cartContent"></div>
+
+        <!-- Cart Summary -->
+        <div id="cartSummary" class="cart-summary" style="display: none;">
+          <p class="cart-grand-total">
+            Grand Total: ₹<span id="grandTotal">0</span>
+          </p>
+          <p class="payment-note">
+            Payment will be collected via WhatsApp Business UPI / Bank Transfer after order confirmation.
+          </p>
+          <button class="btn btn-primary whatsapp-btn"
+                  id="placeOrderBtn"
+                  onclick="placeOrderViaWhatsApp()">
+            Place Order via WhatsApp
+          </button>
+        </div>
+
+      </div>
+    </section>
+  </main>
+
+
+  <!-- ================= FOOTER ================= -->
+  <footer class="footer">
+    <div class="container footer-inner">
+      <p>&copy; Handmade Craft Gifts. Handcrafted with love.</p>
+    </div>
+  </footer>
+
+
+  <!-- ================= SCRIPTS ================= -->
+
+  <!-- Main global script (IMPORTANT - Must come first) -->
+  <script src="js/script.js"></script>
+
+  <script>
+    /* =====================================================
+       CART PAGE LOGIC
+       Depends on functions from script.js:
+       getCart(), updateCartItem(), removeFromCart(),
+       getGrandTotal(), buildOrderMessage(), openWhatsApp()
+    ===================================================== */
+
+    function renderCart() {
+      const cart = getCart();
+      const contentEl = document.getElementById('cartContent');
+      const summaryEl = document.getElementById('cartSummary');
+
+      // If cart empty
+      if (!cart || cart.length === 0) {
+        contentEl.innerHTML = `
+          <div class="cart-empty">
+            <h2>Your cart is empty</h2>
+            <p>Browse our handmade crafts and add items to your cart.</p>
+            <a href="products.html" class="btn btn-primary">Shop Now</a>
+          </div>
+        `;
+        summaryEl.style.display = 'none';
+        return;
+      }
+
+      // Render items
+      contentEl.innerHTML = `
+        <div class="cart-items">
+          ${cart.map((item, idx) => renderCartItem(item, idx)).join('')}
+        </div>
+      `;
+
+      // Show summary
+      summaryEl.style.display = 'block';
+      document.getElementById('grandTotal').textContent = getGrandTotal(cart);
+
+      // Attach listeners
+      cart.forEach((item, idx) => {
+        attachCartItemListeners(idx);
+      });
+    }
+
+
+    function renderCartItem(item, idx) {
+      return `
+        <div class="cart-item" data-idx="${idx}">
+          
+          <img src="${item.image}" alt="${item.name}" class="cart-item-image">
+
+          <div class="cart-item-details">
+            <span class="cart-item-name">${item.name}</span>
+            <span class="cart-item-meta">
+              Color: ${item.color} |
+              Lighting: ${item.lighting ? 'Yes (+₹100)' : 'No'} |
+              Qty: ${item.quantity}
+            </span>
+
+            <!-- Edit Panel -->
+            <div class="cart-item-edit" id="edit-${idx}">
+              <div class="form-row">
+                <div>
+                  <label>Color</label>
+                  <input type="text" class="edit-color" value="${item.color}" data-idx="${idx}">
+                </div>
+                <div>
+                  <label>Lighting</label>
+                  <select class="edit-lighting" data-idx="${idx}">
+                    <option value="false" ${!item.lighting ? 'selected' : ''}>No</option>
+                    <option value="true" ${item.lighting ? 'selected' : ''}>Yes (+₹100)</option>
+                  </select>
+                </div>
+                <div>
+                  <label>Quantity</label>
+                  <input type="number" min="1"
+                         class="edit-qty"
+                         value="${item.quantity}"
+                         data-idx="${idx}">
+                </div>
+
+                <button class="btn btn-primary btn-save-edit" data-idx="${idx}">
+                  Save
+                </button>
+              </div>
+            </div>
+
+          </div>
+
+          <div class="cart-item-actions">
+            <span class="cart-item-price">₹${item.total}</span>
+
+            <div class="cart-item-buttons">
+              <button class="btn btn-outline btn-edit" data-idx="${idx}">
+                Edit
+              </button>
+              <button class="btn btn-outline btn-remove" data-idx="${idx}">
+                Remove
+              </button>
+            </div>
+          </div>
+
+        </div>
+      `;
+    }
+
+
+    function attachCartItemListeners(idx) {
+      const editBtn = document.querySelector(`.btn-edit[data-idx="${idx}"]`);
+      const saveBtn = document.querySelector(`.btn-save-edit[data-idx="${idx}"]`);
+      const removeBtn = document.querySelector(`.btn-remove[data-idx="${idx}"]`);
+      const editPanel = document.getElementById(`edit-${idx}`);
+
+      editBtn?.addEventListener('click', () => {
+        editPanel.classList.toggle('active');
+      });
+
+      saveBtn?.addEventListener('click', () => {
+        const color = document.querySelector(`.edit-color[data-idx="${idx}"]`).value;
+        const lighting = document.querySelector(`.edit-lighting[data-idx="${idx}"]`).value === 'true';
+        const quantity = parseInt(document.querySelector(`.edit-qty[data-idx="${idx}"]`).value) || 1;
+
+        updateCartItem(idx, { color, lighting, quantity });
+        renderCart();
+      });
+
+      removeBtn?.addEventListener('click', () => {
+        removeFromCart(idx);
+        renderCart();
+      });
+    }
+
+
+    function placeOrderViaWhatsApp() {
+      const msg = buildOrderMessage(getCart());
+      openWhatsApp(msg);
+    }
+
+
+    // Mobile menu safe toggle
+    const hamburger = document.querySelector('.hamburger');
+    if (hamburger) {
+      hamburger.addEventListener('click', () => {
+        hamburger.classList.toggle('active');
+        document.querySelector('.nav')?.classList.toggle('active');
+      });
+    }
+
+    // ✅ STEP 5 CORRECT IMPLEMENTATION
+    document.addEventListener("DOMContentLoaded", renderCart);
+
+  </script>
+
+</body>
+</html>

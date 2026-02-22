@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Handmade Craft Gifts | Handcrafted With Love</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <!-- Header -->
+<header class="header">
+  <div class="container header-inner">
+    
+    <a href="index.html" class="logo" style="display:flex; align-items:center; gap:10px; text-decoration:none;">
+      
+      <img src="assets/logo.png" alt="ARDHAM" style="height:50px;">
+
+      <div style="display:flex; flex-direction:column; line-height:1;">
+        <span style="font-size:22px; font-weight:700; letter-spacing:1px; color:#82183f;">
+          ARDHAM
+        </span>
+        <span style="font-size:13px; color:#9f3d57; letter-spacing:2px; text-transform:lowercase;">
+          atelier petals
+        </span>
+      </div>
+
+    </a>
+
+    <nav class="nav">
+      <a href="index.html">Home</a>
+      <a href="products.html">Shop</a>
+      <a href="cart.html">Cart</a>
+      <a href="customize.html">Customize</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+
+  </div>
+</header>
+
+  <main>
+    <!-- Hero Section -->
+    <section class="hero">
+      <div class="container">
+        <div class="hero-logo">
+          <img src="assets/logo.png" alt="Logo" style="max-height: 80px;" onerror="this.style.display='none';">
+        </div>
+        <h1>Handcrafted Gifts Made With Love</h1>
+        <p class="hero-tagline">Unique chenille stem crafts for every occasion</p>
+        <p class="hero-intro">
+          We create beautiful handmade decorative crafts and gift items using chenille stems — 
+          perfect for adding a personal touch to any space or celebration.
+        </p>
+        <a href="products.html" class="btn btn-primary">Shop Now</a>
+      </div>
+    </section>
+
+    <!-- About Product Section -->
+    <section class="section">
+      <div class="container">
+        <div class="about-product">
+          <h2>About Our Handmade Chenille Stem Craft Gifts</h2>
+          <p>
+            Chenille stem (pipe cleaner) is a flexible decorative craft material originally designed 
+            for cleaning smoking pipes. Today it is widely used for handmade decorative crafts, gift 
+            items, floral art, and creative customized designs.
+          </p>
+          <p>
+            Our chenille stem crafts are made with care and attention to detail. Here's what makes 
+            them special:
+          </p>
+          <ul>
+            <li><strong>Soft texture</strong> — Comfortable to touch and perfect for delicate displays</li>
+            <li><strong>Bendable</strong> — Easily shaped into unique designs and creative forms</li>
+            <li><strong>Available in multiple vibrant colors</strong> — Choose from a wide palette to match any preference</li>
+            <li><strong>Perfect for handmade decor & gifting</strong> — Ideal for home decor, weddings, and special occasions</li>
+          </ul>
+          <div class="timeline-notice">
+            <strong>Making Time Notice:</strong><br>
+            Small items: 4–5 days making + 2 days courier<br>
+            Large items: 7 days making + 2 days courier
+          </div>
+          <a href="products.html" class="btn btn-primary">Shop Now</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container footer-inner">
+      <p>&copy; Handmade Craft Gifts. Handcrafted with love.</p>
+    </div>
+  </footer>
+
+  <script>
+    // Mobile hamburger menu toggle
+    const hamburger = document.querySelector('.hamburger');
+    const nav = document.querySelector('.nav');
+    if (hamburger && nav) {
+      hamburger.addEventListener('click', () => {
+        hamburger.classList.toggle('active');
+        nav.classList.toggle('active');
+      });
+      nav.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', () => {
+          hamburger.classList.remove('active');
+          nav.classList.remove('active');
+        });
+      });
+    }
+  </script>
+</body>
+</html>
