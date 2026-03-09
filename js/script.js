@@ -366,7 +366,7 @@ function handleAddToCart(idx) {
 
   addToCart(item);
 
-  alert("Added to Cart ✅");
+  // alert("Added to Cart ✅");
   window.location.href = "cart.html";
 }
 document.addEventListener("DOMContentLoaded", renderProducts);
@@ -416,7 +416,8 @@ function prevImage(index, btn) {
   // // arrow click effect
   // btn.classList.add("clicked");
   // setTimeout(() => btn.classList.remove("clicked"), 150);
-}function changeQty(idx, change) {
+}
+function changeQty(idx, change) {
   const qtyInput = document.querySelectorAll('.product-qty')[idx];
   let value = parseInt(qtyInput.value) || 1;
 

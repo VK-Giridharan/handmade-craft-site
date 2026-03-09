@@ -50,7 +50,7 @@
         <!-- Cart Summary -->
         <div id="cartSummary" class="cart-summary" style="display: none;">
           <p class="cart-grand-total">
-            Grand Total: ₹<span id="grandTotal">0</span>
+            Grand Total: ₹ <span id="grandTotal">0</span>
           </p>
           <p class="payment-note">
             Payment will be collected via WhatsApp Business UPI / Bank Transfer after order confirmation.
@@ -125,91 +125,122 @@
 
 
     function renderCartItem(item, idx) {
-      return `
-        <div class="cart-item" data-idx="${idx}">
-          
-          <img src="${item.image}" alt="${item.name}" class="cart-item-image">
+  return `
+    <div class="cart-item" data-idx="${idx}">
+      
+      <img src="${item.image}" alt="${item.name}" class="cart-item-image">
 
-          <div class="cart-item-details">
-            <span class="cart-item-name">${item.name}</span>
-            <span class="cart-item-meta">
-              Color: ${item.color} |
-              Lighting: ${item.lighting ? 'Yes (+₹100)' : 'No'} |
-              Qty: ${item.quantity}
-            </span>
+      <div class="cart-item-details">
+        <span class="cart-item-name">${item.name}</span>
+        <span class="cart-item-meta">
+          Color: ${item.color} |
+          Lighting: ${item.lighting ? 'Yes (+₹100)' : 'No'} |
+          Qty: ${item.quantity}
+        </span>
 
-            <!-- Edit Panel -->
-            <div class="cart-item-edit" id="edit-${idx}">
-              <div class="form-row">
-                <div>
-                  <label>Color</label>
-                  <input type="text" class="edit-color" value="${item.color}" data-idx="${idx}">
-                </div>
-                <div>
-                  <label>Lighting</label>
-                  <select class="edit-lighting" data-idx="${idx}">
-                    <option value="false" ${!item.lighting ? 'selected' : ''}>No</option>
-                    <option value="true" ${item.lighting ? 'selected' : ''}>Yes (+₹100)</option>
-                  </select>
-                </div>
-                <div>
-                  <label>Quantity</label>
-                  <input type="number" min="1"
-                         class="edit-qty"
-                         value="${item.quantity}"
-                         data-idx="${idx}">
-                </div>
+        <!-- Edit Panel -->
+        <div class="cart-item-edit" id="edit-${idx}">
+          <div class="form-row">
 
-                <button class="btn btn-primary btn-save-edit" data-idx="${idx}">
-                  Save
-                </button>
+            <div>
+              <label>Color</label>
+              <input type="text" class="edit-color" value="${item.color}" data-idx="${idx}">
+            </div>
+
+            <div>
+              <label>Lighting</label>
+              <select class="edit-lighting" data-idx="${idx}">
+                <option value="false" ${!item.lighting ? 'selected' : ''}>No</option>
+                <option value="true" ${item.lighting ? 'selected' : ''}>Yes (+₹100)</option>
+              </select>
+            </div>
+
+            <div>
+              <label>Quantity</label>
+              <div class="qty-control" data-idx="${idx}">
+                <button type="button" class="qty-btn minus">−</button>
+                <input type="number" class="edit-qty" value="${item.quantity}" min="1" data-idx="${idx}" readonly>
+                <button type="button" class="qty-btn plus">+</button>
               </div>
             </div>
 
+            <button class="btn btn-primary btn-save-edit" data-idx="${idx}">
+              Save
+            </button>
+
           </div>
-
-          <div class="cart-item-actions">
-            <span class="cart-item-price">₹${item.total}</span>
-
-            <div class="cart-item-buttons">
-              <button class="btn btn-outline btn-edit" data-idx="${idx}">
-                Edit
-              </button>
-              <button class="btn btn-outline btn-remove" data-idx="${idx}">
-                Remove
-              </button>
-            </div>
-          </div>
-
         </div>
-      `;
-    }
+
+      </div>
+
+      <div class="cart-item-actions">
+        <span class="cart-item-price">₹${item.total}</span>
+
+        <div class="cart-item-buttons">
+          <button class="btn btn-outline btn-edit" data-idx="${idx}">
+            Edit
+          </button>
+          <button class="btn btn-outline btn-remove" data-idx="${idx}">
+            Remove
+          </button>
+        </div>
+      </div>
+
+    </div>
+  `;
+}
 
 
-    function attachCartItemListeners(idx) {
-      const editBtn = document.querySelector(`.btn-edit[data-idx="${idx}"]`);
-      const saveBtn = document.querySelector(`.btn-save-edit[data-idx="${idx}"]`);
-      const removeBtn = document.querySelector(`.btn-remove[data-idx="${idx}"]`);
-      const editPanel = document.getElementById(`edit-${idx}`);
+      // ✅ Idha paste pannunga (updated code with +/- buttons)
+function attachCartItemListeners(idx) {
+  const editBtn = document.querySelector(`.btn-edit[data-idx="${idx}"]`);
+  const saveBtn = document.querySelector(`.btn-save-edit[data-idx="${idx}"]`);
+  const removeBtn = document.querySelector(`.btn-remove[data-idx="${idx}"]`);
+  const editPanel = document.getElementById(`edit-${idx}`);
 
-      editBtn?.addEventListener('click', () => {
-        editPanel.classList.toggle('active');
-      });
+  // Edit Toggle
+  editBtn?.addEventListener('click', () => {
+    editPanel.classList.toggle('active');
+  });
 
-      saveBtn?.addEventListener('click', () => {
-        const color = document.querySelector(`.edit-color[data-idx="${idx}"]`).value;
-        const lighting = document.querySelector(`.edit-lighting[data-idx="${idx}"]`).value === 'true';
-        const quantity = parseInt(document.querySelector(`.edit-qty[data-idx="${idx}"]`).value) || 1;
+  // Save Changes
+  saveBtn?.addEventListener('click', () => {
+    const color = document.querySelector(`.edit-color[data-idx="${idx}"]`).value;
+    const lighting = document.querySelector(`.edit-lighting[data-idx="${idx}"]`).value === 'true';
+    const quantity = parseInt(document.querySelector(`.edit-qty[data-idx="${idx}"]`).value) || 1;
 
-        updateCartItem(idx, { color, lighting, quantity });
-        renderCart();
-      });
+    updateCartItem(idx, { color, lighting, quantity });
+    renderCart();
+  });
 
-      removeBtn?.addEventListener('click', () => {
-        removeFromCart(idx);
-        renderCart();
-      });
-    }
+  // Remove Item
+  removeBtn?.addEventListener('click', () => {
+    removeFromCart(idx);
+    renderCart();
+  });
+
+  // 🔥 NEW: Quantity +/- Buttons
+  const qtyContainer = document.querySelector(`.qty-control[data-idx="${idx}"]`);
+  const qtyInput = document.querySelector(`.edit-qty[data-idx="${idx}"]`);
+  
+  qtyContainer?.querySelector('.minus')?.addEventListener('click', (e) => {
+    e.stopPropagation();
+    let val = parseInt(qtyInput.value) || 1;
+    if (val > 1) qtyInput.value = val - 1;
+  });
+
+  qtyContainer?.querySelector('.plus')?.addEventListener('click', (e) => {
+    e.stopPropagation();
+    let val = parseInt(qtyInput.value) || 1;
+    qtyInput.value = val + 1;
+  });
+
+  // Manual input validation
+  qtyInput?.addEventListener('change', () => {
+    let val = parseInt(qtyInput.value);
+    if (!val || val < 1) qtyInput.value = 1;
+  });
+}
 
 
     function placeOrderViaWhatsApp() {

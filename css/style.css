@@ -546,7 +546,7 @@ ul {
 }
 
 .cart-grand-total {
-  font-family: var(--font-display);
+  font-family: var(--font-body);
   font-size: 1.5rem;
   font-weight: 600;
   margin-bottom: 1rem;
@@ -850,4 +850,127 @@ ul {
 .dot.active {
   background: black;
   transform: scale(1.2);
+}
+
+.option-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-bottom: 15px;
+  font-family: Arial, sans-serif;
+}
+
+.option-group label {
+  font-size: 14px;
+  font-weight: 600;
+  color: #333;
+}
+
+.product-color {
+  padding: 12px 14px;
+  border-radius: 40px; /* more curvy */
+  border: 1px solid #ddd;
+  font-size: 14px;
+  background: #fff;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  appearance: none;
+}
+
+/* hover effect */
+.product-color:hover {
+  border-color: #555;
+}
+
+/* focus effect */
+.product-color:focus {
+  outline: none;
+  border-color: #ff4d4f;
+  box-shadow: 0 0 6px rgba(255,77,79,0.3);
+}
+
+.hint {
+  font-size: 12px;
+  color: #28a745;
+  font-weight: 500;
+}
+
+/* Change .edit-panel -> .cart-item-edit */
+.cart-item-edit {
+  background: #f9f9f9;
+  padding: 12px;
+  border-radius: 16px;
+  margin-top: 8px;
+}
+
+/* all inputs inside edit panel */
+.cart-item-edit select,
+.cart-item-edit input {
+  width: 100%;
+  padding: 10px 12px;
+  border-radius: 18px; /* curvy box */
+  border: 1px solid #ddd;
+  font-size: 14px;
+  margin-bottom: 8px;
+  transition: all 0.25s ease;
+}
+
+/* hover */
+.cart-item-edit select:hover,
+.cart-item-edit input:hover {
+  border-color: #666;
+}
+
+/* focus */
+.cart-item-edit select:focus,
+.cart-item-edit input:focus {
+  outline: none;
+  border-color: #ff4d4f;
+  box-shadow: 0 0 5px rgba(255,77,79,0.25);
+}
+
+/* save button */
+.btn-save-edit {
+  border-radius: 20px;
+  padding: 8px 14px;
+}
+
+/* Qty control box */
+.qty-control {
+  display: flex;
+  align-items: center;
+  width: 120px;
+  border: 1px solid #ddd;
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+.qty-control input.edit-qty {
+  flex: 1;
+  border: none;
+  text-align: center;
+  font-size: 14px;
+  padding: 8px 0;
+  background: transparent;
+  outline: none;
+}
+
+.qty-btn {
+  width: 32px;
+  height: 32px;
+  border: none;
+  background: #f1f1f1;
+  cursor: pointer;
+  font-size: 18px;
+  font-weight: bold;
+  transition: 0.2s;
+}
+
+.qty-btn:hover {
+  background: #e0c0c5;
+  color: #82183f;
+}
+
+.qty-btn:active {
+  transform: scale(0.9);
 }
