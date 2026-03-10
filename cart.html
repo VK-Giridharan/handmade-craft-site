@@ -149,7 +149,13 @@
 
             <div>
               <label>Color</label>
-              <input type="text" class="edit-color" value="${item.color}" data-idx="${idx}">
+  <select class="edit-color" data-idx="${idx}">
+    <option value="Red" ${item.color === "Red" ? "selected" : ""}>Red</option>
+    <option value="Pink" ${item.color === "Pink" ? "selected" : ""}>Pink</option>
+    <option value="Blue" ${item.color === "yellow" ? "selected" : ""}>yellow</option>
+    <option value="Custom" ${item.color === "Custom" ? "selected" : ""}>Custom</option>
+  </select>
+
             </div>
 
             <div>
