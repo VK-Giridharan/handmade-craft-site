@@ -7,13 +7,13 @@
 
 /* -------------------- CSS Variables -------------------- */
 :root {
-  --bg-cream: #FBF8F3;
+  --bg-cream:#e8ccbe;
   --bg-cream-dark: #F5F0E8;
  --accent-pink: #C06F78;
 --accent-pink-hover: #A6545E;
 --accent-pink-light: #F1C9CD;
-  --text-dark: #3D3D3D;
-  --text-muted: #6B6B6B;
+  --text-dark: #161616;
+  --text-muted: #474646;
   --white: #FFFFFF;
   --shadow-soft: 0 4px 20px rgba(0, 0, 0, 0.06);
   --shadow-soft-hover: 0 8px 30px rgba(0, 0, 0, 0.1);
@@ -120,7 +120,60 @@ ul {
 .nav a:hover {
   color: var(--accent-pink-hover);
 }
+/* AUTO IMAGE SLIDER */
 
+.image-slider{
+  width:fit-content;
+  
+  height: fit-content;
+  margin:auto;
+  margin-top: 100px ;
+}
+
+.slider-container{
+  position:relative;
+  overflow:hidden;
+  border-radius:12px;
+}
+
+.slider{
+  display:flex;
+  transition: transform 0.5s ease;
+}
+
+.slider img{
+  width:1200%;
+  height:500px;
+  object-fit:cover;
+  flex-shrink:0;
+}
+
+/* arrows */
+
+.slider-btn{
+  position:absolute;
+  top:50%;
+  transform:translateY(-50%);
+  background:transparent;
+  color:rgb(16, 13, 13);
+  border:none;
+  padding:20px 15px;
+  cursor:pointer;
+  font-size:22px;
+  
+}
+
+.prev{
+  left:15px;
+}
+
+.next{
+  right:15px;
+}
+
+.slider-btn:hover{
+  background:rgba(0,0,0,0.7);
+}
 /* Hamburger (mobile) */
 .hamburger {
   display: none;

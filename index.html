@@ -37,13 +37,24 @@
   </div>
 </header>
 
+<section class="image-slider">
+  <div class="slider">
+
+   <img src="assets/Blooming Grace Basket1.jpeg" class="slide active" class="slide active">
+    <img src="assets/slider2.jpg" class="slide">
+    <img src="assets/slider3.jpg" class="slide">
+
+  </div>
+  <button class="slider-btn prev">&#10094;</button>
+    <button class="slider-btn next">&#10095;</button>
+</section>
   <main>
+
     <!-- Hero Section -->
     <section class="hero">
       <div class="container">
-        <div class="hero-logo">
-          <img src="assets/logo.png" alt="Logo" style="max-height: 80px;" onerror="this.style.display='none';">
-        </div>
+       
+
         <h1>Handcrafted Gifts Made With Love</h1>
         <p class="hero-tagline">Unique chenille stem crafts for every occasion</p>
         <p class="hero-intro">
@@ -93,21 +104,45 @@
   </footer>
 
   <script>
-    // Mobile hamburger menu toggle
-    const hamburger = document.querySelector('.hamburger');
-    const nav = document.querySelector('.nav');
-    if (hamburger && nav) {
-      hamburger.addEventListener('click', () => {
-        hamburger.classList.toggle('active');
-        nav.classList.toggle('active');
-      });
-      nav.querySelectorAll('a').forEach(link => {
-        link.addEventListener('click', () => {
-          hamburger.classList.remove('active');
-          nav.classList.remove('active');
-        });
-      });
-    }
-  </script>
+
+let slider = document.querySelector(".slider")
+let slides = document.querySelectorAll(".slider img")
+
+let index = 0
+
+function showSlide(){
+
+  if(index >= slides.length){
+    index = 0
+  }
+
+  if(index < 0){
+    index = slides.length - 1
+  }
+
+  slider.style.transform = "translateX(" + (-index * 100) + "%)"
+
+}
+
+/* buttons */
+
+document.querySelector(".next").onclick = ()=>{
+  index++
+  showSlide()
+}
+
+document.querySelector(".prev").onclick = ()=>{
+  index--
+  showSlide()
+}
+
+/* auto slide */
+
+setInterval(()=>{
+  index++
+  showSlide()
+},7000)
+
+</script>
 </body>
 </html>
