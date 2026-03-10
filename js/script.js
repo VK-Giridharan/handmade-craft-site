@@ -369,7 +369,35 @@ function handleAddToCart(idx) {
   // alert("Added to Cart ✅");
   window.location.href = "cart.html";
 }
-document.addEventListener("DOMContentLoaded", renderProducts);
+
+document.addEventListener("DOMContentLoaded", () => {
+  // Render products only on shop page
+  const grid = document.getElementById("productGrid");
+  if (grid) {
+    renderProducts();
+  }
+
+  // Mobile hamburger menu (shared for all pages)
+  const hamburger = document.querySelector(".hamburger");
+  const nav = document.querySelector(".nav");
+
+  if (hamburger && nav) {
+    const toggleNav = () => {
+      hamburger.classList.toggle("active");
+      nav.classList.toggle("active");
+    };
+
+    hamburger.addEventListener("click", toggleNav);
+
+    // Close menu when a nav link is clicked
+    nav.querySelectorAll("a").forEach((link) => {
+      link.addEventListener("click", () => {
+        hamburger.classList.remove("active");
+        nav.classList.remove("active");
+      });
+    });
+  }
+});
 const imageIndexes = {};
 
 function updateDots(index) {

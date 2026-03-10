@@ -9,33 +9,34 @@
 <body>
   <!-- Header -->
   <header class="header">
-  <div class="container header-inner">
-    
-    <a href="index.html" class="logo" style="display:flex; align-items:center; gap:10px; text-decoration:none;">
-      
-      <img src="assets/logo.png" alt="ARDHAM" style="height:50px;">
+    <div class="container header-inner">
+      <a href="index.html" class="logo" style="display:flex; align-items:center; gap:10px; text-decoration:none;">
+        <img src="assets/logo.png" alt="ARDHAM" style="height:50px;">
+        <div style="display:flex; flex-direction:column; line-height:1;">
+          <span style="font-size:22px; font-weight:700; letter-spacing:1px; color:#82183f;">
+            ARDHAM
+          </span>
+          <span style="font-size:13px; color:#9f3d57; letter-spacing:2px; text-transform:lowercase;">
+            atelier petals
+          </span>
+        </div>
+      </a>
 
-      <div style="display:flex; flex-direction:column; line-height:1;">
-        <span style="font-size:22px; font-weight:700; letter-spacing:1px; color:#82183f;">
-          ARDHAM
-        </span>
-        <span style="font-size:13px; color:#9f3d57; letter-spacing:2px; text-transform:lowercase;">
-          atelier petals
-        </span>
-      </div>
+      <button class="hamburger" aria-label="Toggle navigation">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
 
-    </a>
-
-    <nav class="nav">
-      <a href="index.html">Home</a>
-      <a href="products.html">Shop</a>
-      <a href="cart.html">Cart</a>
-      <a href="customize.html">Customize</a>
-      <a href="contact.html">Contact</a>
-    </nav>
-
-  </div>
-</header>
+      <nav class="nav">
+        <a href="index.html">Home</a>
+        <a href="products.html">Shop</a>
+        <a href="cart.html">Cart</a>
+        <a href="customize.html">Customize</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+    </div>
+  </header>
 
   <main>
     <section class="section">
@@ -132,12 +133,6 @@
 
       const message = buildCustomMessage(formData);
       openWhatsApp(message);
-    });
-
-    // Mobile menu
-    document.querySelector('.hamburger')?.addEventListener('click', () => {
-      document.querySelector('.hamburger').classList.toggle('active');
-      document.querySelector('.nav').classList.toggle('active');
     });
   </script>
 </body>
