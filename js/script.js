@@ -8,7 +8,7 @@ const PRODUCTS = [
     weight: "66 gm",
     dimensions: "7 x 7 x 11 cm",
     sizeType: "Small",
-    description: "Rapunzel Tub is a handmade decorative chenille stem flower pot crafted with vibrant colors and built-in LED lighting. It is lightweight, elegant, and perfect for gifting on birthdays, anniversaries, and special occasions.",
+    description: "Rapunzel Tub is a handmade decorative lightweight,elegant chenille stem flower pot crafted with vibrant colors and built-in LED lighting.",
     makingTime: "Small item: 4–5 days making + 2 days courier",
     image: "assets/products/rapunzel-tub.jpg",
     colors: ["Red", "Pink", "Yellow", "Custom"],
@@ -21,7 +21,7 @@ const PRODUCTS = [
     weight: "104 gm",
     dimensions: "15 x 6 x 30 cm",
     sizeType: "Medium",
-    description: "Mini Light Bouquet is a beautifully handcrafted chenille flower arrangement designed with soft velvet stems and warm LED lights. Wrapped in elegant premium paper with a cute ribbon finish, this bouquet creates a cozy and romantic vibe. Perfect for gifting on birthdays, anniversaries, surprises, and special moments.",
+    description: "Mini Light Bouquet is a beautiful chenille flower arrangement,Wrapped in elegant premium paper with a cute ribbon finish and warm LED lights.",
     makingTime: "Medium item: 5–6 days making + 2 days courier",
     image: "assets/products/Mini-Light-Bouquet.jpeg",
     colors: ["Red", "Pink", "Yellow", "Custom"],
@@ -60,7 +60,7 @@ const PRODUCTS = [
     weight: "120 gm",
     dimensions: "30 x 7 x 35 cm",
     sizeType: "Medium",
-    description: "Medium Bouquet is a beautifully handcrafted chenille stem flower arrangement wrapped in premium paper with elegant finishing. It gives a realistic floral look and is perfect for gifting on special occasions like birthdays, anniversaries, and surprises.",
+    description: "Medium Bouquet is a beautifully handcrafted chenille,a realistic floral look stem flower arrangement wrapped in premium paper with elegant finishing.",
     makingTime: "Medium item: 5–6 days making + 2 days courier",
 
     // multiple images 👇
@@ -80,7 +80,7 @@ const PRODUCTS = [
   weight: "469 gm",
   dimensions: "25 x 10.5 x 30 cm",
   sizeType: "Large",
-  description: "Blooming Grace Basket is a premium handcrafted chenille flower arrangement designed with vibrant pink and red lilies, elegant greenery, and decorative lace detailing. It gives a rich, aesthetic, and luxurious look, making it perfect for grand gifting occasions like weddings, anniversaries, and special celebrations.",
+  description: "Blooming Grace Basket is a premium handcrafted chenille flower arrangement designed with vibrant pink and red lilies, elegant greenery, and decorative lace detailing.",
   makingTime: "Large item: 6–8 days making + 2 days courier",
 
   // multiple images 👇
@@ -118,7 +118,7 @@ const PRODUCTS = [
   weight: "90 gm",
   dimensions: "15 x 6 x 28 cm",
   sizeType: "Medium",
-  description: "Rapunzel Mini Bouquet is a beautifully handcrafted chenille stem flower arrangement designed with soft pastel tones and elegant wrapping. It gives a dreamy and aesthetic look, perfect for gifting on birthdays, anniversaries, and special surprises.",
+  description: "Rapunzel Mini Bouquet is a beautifully handcrafted chenille stem flower arrangement designed with soft pastel tones with dreamy aesthetic look  and elegant wrapping.",
   makingTime: "Medium item: 5–6 days making + 2 days courier",
 
   images: [
@@ -137,7 +137,7 @@ const PRODUCTS = [
   weight: "80 gm",
   dimensions: "10 x 10 x 20 cm",
   sizeType: "Small",
-  description: "Vase Flowers is a simple and elegant handmade chenille stem flower arrangement placed in a transparent aesthetic vase. It gives a classy and minimal look, perfect for home decor, desk decoration, and gifting.",
+  description: "Vase Flowers is a simple and elegant handmade chenille stem flower arrangement with a classy and minimal look placed in a transparent aesthetic vase.",
   makingTime: "Small item: 3–4 days making + 2 days courier",
 
   images: [
@@ -176,7 +176,7 @@ const PRODUCTS = [
   weight: "50 gm",
   dimensions: "10 x 10 x 15 cm",
   sizeType: "Small",
-  description: "Candy Flower is a cute and colorful handmade chenille stem flower designed with a candy-like aesthetic. It is customizable in both flower type and color, making it a perfect budget-friendly gift for any occasion.",
+  description: "Candy Flower is a cute and colorful handmade chenille stem flower designed with a candy-like aesthetic. It is customizable in both flower type and color, making it a perfect budget-friendly gift for any occasion like wedding,birthdays.",
   makingTime: "Small item: 2–3 days making + 2 days courier",
 
   image: "assets/products/candy flower.jpeg",
@@ -198,7 +198,7 @@ const PRODUCTS = [
   weight: "120 gm",
   dimensions: "20 x 10 x 30 cm",
   sizeType: "Medium",
-  description: "Hand Bouquet is a beautifully crafted handmade chenille stem flower arrangement perfect for gifting. Customers can customize the bouquet with different flower types, and the price varies based on selection, starting from ₹80 up to ₹150.",
+  description: "Hand Bouquet is a beautifully crafted handmade chenille stem flower arrangement perfect for gifting. Customers can customize the bouquet with different flower types based on selection.",
   makingTime: "Medium item: 3–5 days making + 2 days courier",
 
   images: [
