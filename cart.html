@@ -31,7 +31,7 @@
 
       <nav class="nav">
         <a href="index.html">Home</a>
-        <a href="products.html">Shop</a>
+        <a href="shop.html">Shop</a>
         <a href="cart.html">Cart</a>
         <a href="customize.html">Customize</a>
         <a href="contact.html">Contact</a>
@@ -55,7 +55,7 @@
         <!-- Cart Summary -->
         <div id="cartSummary" class="cart-summary" style="display: none;">
           <p class="cart-grand-total">
-            Grand Total: ₹ <span id="grandTotal">0</span>
+            Grand Total: <span class="rupee">₹</span><span id="grandTotal">0</span>
           </p>
           <p class="payment-note">
             Payment will be collected via WhatsApp Business UPI / Bank Transfer after order confirmation.
@@ -104,7 +104,7 @@
           <div class="cart-empty">
             <h2>Your cart is empty</h2>
             <p>Browse our handmade crafts and add items to your cart.</p>
-            <a href="products.html" class="btn btn-primary">Shop Now</a>
+            <a href="shop.html" class="btn btn-primary">Shop Now</a>
           </div>
         `;
         summaryEl.style.display = 'none';
@@ -185,7 +185,9 @@
       </div>
 
       <div class="cart-item-actions">
-        <span class="cart-item-price">₹${item.total}</span>
+        <span class="cart-item-price">
+          <span class="rupee">₹</span>${item.total}
+        </span>
 
         <div class="cart-item-buttons">
           <button class="btn btn-outline btn-edit" data-idx="${idx}">

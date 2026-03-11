@@ -153,12 +153,13 @@ ul {
   top:50%;
   transform:translateY(-50%);
   background:transparent;
-  color:rgb(16, 13, 13);
+  color:white;
   border:none;
   padding:20px 15px;
   cursor:pointer;
   font-size:22px;
-  
+  z-index:10;
+  border-radius:50%;
 }
 
 .prev{
@@ -598,9 +599,15 @@ ul {
 
 .cart-grand-total {
   font-family: var(--font-body);
+  color: var(--accent-pink-hover);
   font-size: 1.5rem;
   font-weight: 600;
   margin-bottom: 1rem;
+}
+
+.rupee{
+  font-family: "Times New Roman", Times, serif;
+  font-size: 1.2rem;
 }
 
 .payment-note {

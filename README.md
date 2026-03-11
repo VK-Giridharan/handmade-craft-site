@@ -16,7 +16,7 @@ A 5-page responsive mini e-commerce website for a handmade chenille stem craft g
 ```
 /handmade-craft-site
 ├── index.html         (Home)
-├── products.html      (Shop)
+├── shop.html      (Shop)
 ├── cart.html          (Cart)
 ├── customize.html     (Custom Order)
 ├── contact.html       (Contact + Portfolio)

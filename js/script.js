@@ -275,7 +275,7 @@ function renderProducts() {
         <p><strong>Size:</strong> ${product.sizeType}</p>
 
         <p class="product-price">
-          ₹${product.basePrice}
+          <span class="rupee">₹</span>${product.basePrice}
           <span id="dynamic-${idx}"></span>
         </p>
 
@@ -334,8 +334,8 @@ function renderProducts() {
       const qty = parseInt(qtyEl.value) || 1;
       const total = (product.basePrice + (lighting ? LIGHTING_ADDON : 0)) * qty;
 
-      document.getElementById(`dynamic-${idx}`).textContent =
-        (lighting || qty > 1) ? ` (Total: ₹${total})` : '';
+      document.getElementById(`dynamic-${idx}`).innerHTML =
+        (lighting || qty > 1) ? ` (Total: <span class="rupee">₹</span>${total})` : '';
     };
 
     if (lightingEl) lightingEl.addEventListener('change', updatePrice);
