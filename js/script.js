@@ -74,149 +74,149 @@ const PRODUCTS = [
     lightingAvailable: false
   },
   {
-  id: '6',
-  name: 'Blooming Grace Basket',
-  basePrice: 499,
-  weight: "469 gm",
-  dimensions: "25 x 10.5 x 30 cm",
-  sizeType: "Large",
-  description: "Blooming Grace Basket is a premium handcrafted chenille flower arrangement designed with vibrant pink and red lilies, elegant greenery, and decorative lace detailing.",
-  makingTime: "Large item: 6–8 days making + 2 days courier",
+    id: '6',
+    name: 'Blooming Grace Basket',
+    basePrice: 499,
+    weight: "469 gm",
+    dimensions: "25 x 10.5 x 30 cm",
+    sizeType: "Large",
+    description: "Blooming Grace Basket is a premium handcrafted chenille flower arrangement designed with vibrant pink and red lilies, elegant greenery, and decorative lace detailing.",
+    makingTime: "Large item: 6–8 days making + 2 days courier",
 
-  // multiple images 👇
-  images: [
-    "assets/products/Blooming Grace Basket.jpeg",
-    "assets/products/Blooming Grace Basket1.jpeg"
-  ],
+    // multiple images 👇
+    images: [
+      "assets/products/Blooming Grace Basket.jpeg",
+      "assets/products/Blooming Grace Basket1.jpeg"
+    ],
 
-  colors: ["Pink", "Red", "Custom"],
-  lightingAvailable: false
-},
-{
-  id: '7',
-  name: 'Mini Bouquet (Lily)',
-  basePrice: 249,
-  weight: "80 gm",
-  dimensions: "20 x 8 x 25 cm",
-  sizeType: "Small",
-  description: "Mini Lily Bouquet is a cute handcrafted chenille flower bouquet wrapped in premium paper with ribbon finish. Perfect for surprise gifts and small occasions.",
-  makingTime: "Small item: 3–4 days making + 2 days courier",
-
-  images: [
-    "assets/products/Mini bouquet (lily) .jpeg",
-    "assets/products/Mini bouquet (lily)1.jpeg",
-    "assets/products/Mini bouquet (lily)2.jpeg"
-  ],
-
-  colors: ["Red", "Custom"],
-  lightingAvailable: false
-},
-{
-  id: '8',
-  name: 'Rapunzel Mini Bouquet',
-  basePrice: 249,
-  weight: "90 gm",
-  dimensions: "15 x 6 x 28 cm",
-  sizeType: "Medium",
-  description: "Rapunzel Mini Bouquet is a beautifully handcrafted chenille stem flower arrangement designed with soft pastel tones with dreamy aesthetic look  and elegant wrapping.",
-  makingTime: "Medium item: 5–6 days making + 2 days courier",
-
-  images: [
-    "assets/products/Rapunzel mini Bouquet (1).jpeg",
-    "assets/products/Rapunzel mini Bouquet (2).jpeg",
-    "assets/products/Rapunzel mini Bouquet (3).jpeg"
-  ],
-
-  colors: ["Pink", "Purple", "Custom"],
-  lightingAvailable: false
-},
-{
-  id: '9',
-  name: 'Vase Flowers',
-  basePrice: 129,
-  weight: "80 gm",
-  dimensions: "10 x 10 x 20 cm",
-  sizeType: "Small",
-  description: "Vase Flowers is a simple and elegant handmade chenille stem flower arrangement with a classy and minimal look placed in a transparent aesthetic vase.",
-  makingTime: "Small item: 3–4 days making + 2 days courier",
-
-  images: [
-    "assets/products/vase flowers (1).jpeg",
-    "assets/products/vase flowers (2).jpeg",
-    "assets/products/vase flowers (3).jpeg",
-    "assets/products/vase flowers (4).jpeg",
-    "assets/products/vase flowers (5).jpeg"
-  ],
-
-  colors: ["Pink", "Custom"],
-  lightingAvailable: false
-},
-{
-  id: '10',
-  name: 'Heart Tub',
-  basePrice: 149,
-  weight: "100 gm",
-  dimensions: "12 x 12 x 15 cm",
-  sizeType: "Small",
-  description: "Heart Tub is a cute and customizable handmade gift featuring multiple chenille hearts arranged beautifully in a tub. You can personalize the color and number of hearts to make it perfect for special occasions like birthdays, anniversaries, or surprises.",
-  makingTime: "Small item: 3–4 days making + 2 days courier",
-  image: "assets/products/heart tub.jpeg",
-  colors: ["Red", "Pink", "Custom"],
-  customizable: {
-    color: true,
-    numberOfHearts: true
+    colors: ["Pink", "Red", "Custom"],
+    lightingAvailable: false
   },
+  {
+    id: '7',
+    name: 'Mini Bouquet (Lily)',
+    basePrice: 249,
+    weight: "80 gm",
+    dimensions: "20 x 8 x 25 cm",
+    sizeType: "Small",
+    description: "Mini Lily Bouquet is a cute handcrafted chenille flower bouquet wrapped in premium paper with ribbon finish. Perfect for surprise gifts and small occasions.",
+    makingTime: "Small item: 3–4 days making + 2 days courier",
 
-  lightingAvailable: false
-},
-{
-  id: '11',
-  name: 'Candy Flower',
-  basePrice: 99,
-  weight: "50 gm",
-  dimensions: "10 x 10 x 15 cm",
-  sizeType: "Small",
-  description: "Candy Flower is a cute and colorful handmade chenille stem flower designed with a candy-like aesthetic. It is customizable in both flower type and color, making it a perfect budget-friendly gift for any occasion like wedding,birthdays.",
-  makingTime: "Small item: 2–3 days making + 2 days courier",
+    images: [
+      "assets/products/Mini bouquet (lily) .jpeg",
+      "assets/products/Mini bouquet (lily)1.jpeg",
+      "assets/products/Mini bouquet (lily)2.jpeg"
+    ],
 
-  image: "assets/products/candy flower.jpeg",
-
-  colors: ["Red", "Pink", "Yellow", "Custom"],
-  customizable: {
-    color: true,
-    flowerType: true
+    colors: ["Red", "Custom"],
+    lightingAvailable: false
   },
+  {
+    id: '8',
+    name: 'Rapunzel Mini Bouquet',
+    basePrice: 249,
+    weight: "90 gm",
+    dimensions: "15 x 6 x 28 cm",
+    sizeType: "Medium",
+    description: "Rapunzel Mini Bouquet is a beautifully handcrafted chenille stem flower arrangement designed with soft pastel tones with dreamy aesthetic look  and elegant wrapping.",
+    makingTime: "Medium item: 5–6 days making + 2 days courier",
 
-  lightingAvailable: false
-},
-{
-  id: '12',
-  name: 'Hand Bouquet',
-  basePrice: 80,
-  maxPrice: 150,
-  displayPrice: 229,
-  weight: "120 gm",
-  dimensions: "20 x 10 x 30 cm",
-  sizeType: "Medium",
-  description: "Hand Bouquet is a beautifully crafted handmade chenille stem flower arrangement perfect for gifting. Customers can customize the bouquet with different flower types based on selection.",
-  makingTime: "Medium item: 3–5 days making + 2 days courier",
+    images: [
+      "assets/products/Rapunzel mini Bouquet (1).jpeg",
+      "assets/products/Rapunzel mini Bouquet (2).jpeg",
+      "assets/products/Rapunzel mini Bouquet (3).jpeg"
+    ],
 
-  images: [
-    "assets/products/hand banquet (1).jpeg",
-    "assets/products/hand banquet (2).jpeg",
-    "assets/products/hand banquet (3).jpeg",
-    "assets/products/hand banquet (4).jpeg"
-  ],
-
-  colors: ["Red", "Pink", "Yellow", "Custom"],
-  customizable: {
-    color: true,
-    flowerType: true,
-    priceVaries: true
+    colors: ["Pink", "Purple", "Custom"],
+    lightingAvailable: false
   },
+  {
+    id: '9',
+    name: 'Vase Flowers',
+    basePrice: 129,
+    weight: "80 gm",
+    dimensions: "10 x 10 x 20 cm",
+    sizeType: "Small",
+    description: "Vase Flowers is a simple and elegant handmade chenille stem flower arrangement with a classy and minimal look placed in a transparent aesthetic vase.",
+    makingTime: "Small item: 3–4 days making + 2 days courier",
 
-  lightingAvailable: false
-}
+    images: [
+      "assets/products/vase flowers (1).jpeg",
+      "assets/products/vase flowers (2).jpeg",
+      "assets/products/vase flowers (3).jpeg",
+      "assets/products/vase flowers (4).jpeg",
+      "assets/products/vase flowers (5).jpeg"
+    ],
+
+    colors: ["Pink", "Custom"],
+    lightingAvailable: false
+  },
+  {
+    id: '10',
+    name: 'Heart Tub',
+    basePrice: 149,
+    weight: "100 gm",
+    dimensions: "12 x 12 x 15 cm",
+    sizeType: "Small",
+    description: "Heart Tub is a cute and customizable handmade gift featuring multiple chenille hearts arranged beautifully in a tub. You can personalize the color and number of hearts to make it perfect for special occasions like birthdays, anniversaries, or surprises.",
+    makingTime: "Small item: 3–4 days making + 2 days courier",
+    image: "assets/products/heart tub.jpeg",
+    colors: ["Red", "Pink", "Custom"],
+    customizable: {
+      color: true,
+      numberOfHearts: true
+    },
+
+    lightingAvailable: false
+  },
+  {
+    id: '11',
+    name: 'Candy Flower',
+    basePrice: 99,
+    weight: "50 gm",
+    dimensions: "10 x 10 x 15 cm",
+    sizeType: "Small",
+    description: "Candy Flower is a cute and colorful handmade chenille stem flower designed with a candy-like aesthetic. It is customizable in both flower type and color, making it a perfect budget-friendly gift for any occasion like wedding,birthdays.",
+    makingTime: "Small item: 2–3 days making + 2 days courier",
+
+    image: "assets/products/candy flower.jpeg",
+
+    colors: ["Red", "Pink", "Yellow", "Custom"],
+    customizable: {
+      color: true,
+      flowerType: true
+    },
+
+    lightingAvailable: false
+  },
+  {
+    id: '12',
+    name: 'Hand Bouquet',
+    basePrice: 80,
+    maxPrice: 150,
+    displayPrice: 229,
+    weight: "120 gm",
+    dimensions: "20 x 10 x 30 cm",
+    sizeType: "Medium",
+    description: "Hand Bouquet is a beautifully crafted handmade chenille stem flower arrangement perfect for gifting. Customers can customize the bouquet with different flower types based on selection.",
+    makingTime: "Medium item: 3–5 days making + 2 days courier",
+
+    images: [
+      "assets/products/hand banquet (1).jpeg",
+      "assets/products/hand banquet (2).jpeg",
+      "assets/products/hand banquet (3).jpeg",
+      "assets/products/hand banquet (4).jpeg"
+    ],
+
+    colors: ["Red", "Pink", "Yellow", "Custom"],
+    customizable: {
+      color: true,
+      flowerType: true,
+      priceVaries: true
+    },
+
+    lightingAvailable: false
+  }
 ];
 // ================= CART STORAGE SYSTEM =================
 function getCart() {
@@ -230,10 +230,23 @@ function saveCart(cart) {
 function addToCart(item) {
   const cart = getCart();
 
-  const lightingCost = item.lighting ? LIGHTING_ADDON : 0;
-  item.total = (item.basePrice + lightingCost) * item.quantity;
+  const existingItem = cart.find(
+    p => p.id === item.id && p.color === item.color && p.lighting === item.lighting
+  );
 
-  cart.push(item);
+  const lightingCost = item.lighting ? LIGHTING_ADDON : 0;
+
+  if (existingItem) {
+    // product already in cart → increase quantity
+    existingItem.quantity += item.quantity;
+    existingItem.total =
+      (existingItem.basePrice + lightingCost) * existingItem.quantity;
+  } else {
+    // new product
+    item.total = (item.basePrice + lightingCost) * item.quantity;
+    cart.push(item);
+  }
+
   saveCart(cart);
 }
 // =======================================================
@@ -395,6 +408,13 @@ document.addEventListener("DOMContentLoaded", () => {
         hamburger.classList.remove("active");
         nav.classList.remove("active");
       });
+    });
+    // outside click close
+    document.addEventListener("click", (e) => {
+      if (!nav.contains(e.target) && !hamburger.contains(e.target)) {
+        hamburger.classList.remove("active");
+        nav.classList.remove("active");
+      }
     });
   }
 });

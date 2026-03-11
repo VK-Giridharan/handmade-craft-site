@@ -321,14 +321,16 @@ ul {
   color: gray;
 }
 
-.qty-box {
-  display: flex;
-  align-items: center;
-  background: #f9f9f9;
-  border-radius: 10px;
-  padding: 2px 4px;
-  width: 120px;
-  height: 60px;
+.qty-box{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  border:1px solid #ddd;
+  border-radius:12px;
+  width:120px;
+  padding:4px;
+  background:white;
+  gap:4px;
 }
 
 .qty-box input {
@@ -339,23 +341,35 @@ ul {
   font-weight: 600;
 }
 
-.qty-btn {
-  padding: 10px 5px;
-  border: none;              /* 🔥 border remove */
-  background: transparent;   /* 🔥 no box feel */
-  cursor: pointer;
-  font-size: 16px;
-  
+.qty-box{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  border:1px solid #ddd;
+  border-radius:8px;
+  overflow:hidden;
+  width:120px;
+  background:white;
 }
 
-.product-qty {
-  width: 70px;
-  height: 45px;
+/* Input */
+
+.product-qty{
+  width:40px;
+  text-align:center;
+  border:none;
+  background:transparent;
+  font-size:16px;
+  font-weight:600;
+  outline:none;
 }
 
-.qty-btn:hover {
-  color: #82183f;
-  transform: scale(1.2);     /* 🔥 smooth hover effect */
+
+/* Hover */
+
+.qty-btn:hover{
+  background:#82183f;
+  color:white;
 }
 
 .qty-btn:active {
@@ -438,7 +452,7 @@ ul {
 }
 
 .product-options select,
-.product-options input[type="number"] {
+.product-options input[type="number"]:not(.product-qty) {
   width: 100%;
   padding: 0.5rem 0.75rem;
   border: 1px solid #ddd;
@@ -1004,9 +1018,15 @@ ul {
 }
 
 /* save button */
-.btn-save-edit {
-  border-radius: 20px;
-  padding: 8px 14px;
+.btn-save-edit{
+  border-radius:50px;      /* oval shape */
+  padding:8px 18px;
+  font-size:14px;
+  height:40px;
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
 }
 
 /* Qty control box */
@@ -1029,20 +1049,25 @@ ul {
   outline: none;
 }
 
-.qty-btn {
-  width: 32px;
-  height: 32px;
-  border: none;
-  background: #f1f1f1;
-  cursor: pointer;
-  font-size: 18px;
-  font-weight: bold;
-  transition: 0.2s;
+.qty-btn{
+  width:30px;
+  height:30px;
+  border:none;
+  background:transparent;
+  font-size:18px;
+  font-weight:bold;
+  cursor:pointer;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  transition: all 0.2s ease;
 }
 
-.qty-btn:hover {
-  background: #e0c0c5;
-  color: #82183f;
+.qty-btn:hover{
+  transform: scale(1.2);
+  background:rgba(0,0,0,0.05);
+  border-radius:6px;
+  color:black; 
 }
 
 .qty-btn:active {
