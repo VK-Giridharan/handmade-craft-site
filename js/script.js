@@ -499,3 +499,142 @@ function updateCartItem(index, updated) {
 function getGrandTotal(cart) {
   return cart.reduce((sum, item) => sum + item.total, 0);
 }
+
+/* ===== CUSTOM ORDER FORM VALIDATION ===== */
+
+const form = document.getElementById("customizeForm");
+
+if(form){
+
+const nameInput = document.getElementById("name");
+const phoneInput = document.getElementById("phone");
+
+const nameError = document.getElementById("nameError");
+const phoneError = document.getElementById("phoneError");
+
+
+/* NAME VALIDATION */
+
+nameInput.addEventListener("blur",()=>{
+
+const name = nameInput.value.trim();
+
+if(name.length < 4){
+
+nameError.textContent="Minimum 4 letters required";
+nameInput.classList.add("input-error");
+
+}else{
+
+nameError.textContent="";
+nameInput.classList.remove("input-error");
+
+}
+
+});
+
+
+/* PHONE ONLY NUMBERS */
+
+phoneInput.addEventListener("input",()=>{
+
+phoneInput.value = phoneInput.value.replace(/\D/g,'');
+
+});
+
+
+/* PHONE VALIDATION */
+
+phoneInput.addEventListener("blur",()=>{
+
+const phone = phoneInput.value;
+
+if(phone.length !== 10){
+
+phoneError.textContent="Enter valid 10 digit number";
+phoneInput.classList.add("input-error");
+
+}else{
+
+phoneError.textContent="";
+phoneInput.classList.remove("input-error");
+
+}
+
+});
+
+
+/* FORM SUBMIT */
+
+form.addEventListener("submit",(e)=>{
+
+e.preventDefault();
+
+const name = nameInput.value.trim();
+const phone = phoneInput.value.trim();
+
+let valid=true;
+
+if(name.length < 4){
+
+nameError.textContent="Minimum 4 letters required";
+valid=false;
+
+}
+
+if(phone.length !== 10){
+
+phoneError.textContent="Enter valid 10 digit number";
+valid=false;
+
+}
+
+if(!valid) return;
+
+
+
+const productType=document.getElementById("productType").value || "—";
+const color=document.getElementById("color").value || "—";
+const design=document.getElementById("design").value || "—";
+const dimensions=document.getElementById("dimensions").value || "—";
+const lighting=document.getElementById("lighting").value || "—";
+
+
+const message =
+`Custom Order Request
+
+Name: ${name}
+Phone: ${phone}
+Product Type: ${productType}
+Color: ${color}
+Design: ${design}
+Dimensions: ${dimensions}
+Lighting: ${lighting}`;
+
+
+const url=`https://wa.me/918431196545?text=${encodeURIComponent(message)}`;
+
+window.open(url,"_blank");
+
+});
+
+/* REQUIRED FIELD MESSAGE */
+
+document.querySelectorAll("#customizeForm input, #customizeForm textarea, #customizeForm select")
+.forEach(field => {
+
+field.addEventListener("invalid", function(e){
+
+e.target.setCustomValidity("This is required");
+
+});
+
+field.addEventListener("input", function(e){
+
+e.target.setCustomValidity("");
+
+});
+
+});
+
+}

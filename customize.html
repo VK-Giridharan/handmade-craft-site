@@ -54,16 +54,18 @@
           <div class="form-group">
             <label for="name">Name *</label>
             <input type="text" id="name" name="name" required placeholder="Your name">
+            <small class="error-message" id="nameError"></small>
           </div>
 
-          <div class="form-group">
-            <label for="phone">Phone *</label>
-            <input type="tel" id="phone" name="phone" required placeholder="Your phone number">
-          </div>
+         <div class="form-group">
+  <label for="phone">Phone *</label>
+  <input type="tel" id="phone" name="phone" maxlength="10" required placeholder="Your phone number">
+  <small class="error-message" id="phoneError"></small>
+</div>
 
           <div class="form-group">
-            <label for="productType">Product Type</label>
-            <select id="productType" name="productType">
+            <label for="productType">Product Type *</label>
+            <select id="productType" name="productType" required>
               <option value="">Select product type</option>
               <option value="Bouquet">Bouquet</option>
               <option value="Wall Decor">Wall Decor</option>
@@ -72,21 +74,25 @@
               <option value="Figure / Character">Figure / Character</option>
               <option value="Other">Other</option>
             </select>
+            <small class="error-message" id="productTypeError"></small>
           </div>
 
           <div class="form-group">
-            <label for="color">Preferred Color</label>
-            <input type="text" id="color" name="color" placeholder="e.g. Pink, Gold, Multi-color">
+            <label for="color">Preferred Color *</label>
+            <input type="text" id="color" name="color" placeholder="e.g. Pink, Gold, Multi-color" required>
+            <small class="error-message" id="colorError"></small>
           </div>
 
           <div class="form-group">
-            <label for="design">Design Description</label>
-            <textarea id="design" name="design" placeholder="Describe your custom design or share reference ideas..."></textarea>
+            <label for="design">Design Description *</label>
+            <textarea id="design" name="design" placeholder="Describe your custom design or share reference ideas..." required></textarea>
+            <small class="error-message" id="designError"></small>
           </div>
 
           <div class="form-group">
-            <label for="dimensions">Dimensions</label>
-            <input type="text" id="dimensions" name="dimensions" placeholder="e.g. 12x8 inches, Height 6 inches">
+            <label for="dimensions">Dimensions *</label>
+            <input type="text" id="dimensions" name="dimensions" placeholder="e.g. 12x8 inches, Height 6 inches" required>
+            <small class="error-message" id="dimensionsError"></small>
           </div>
 
           <div class="form-group">

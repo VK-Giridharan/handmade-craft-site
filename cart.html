@@ -148,7 +148,7 @@
         <div class="cart-item-edit" id="edit-${idx}">
           <div class="form-row">
 
-            <div>
+            <a>
               <label>Color</label>
   <select class="edit-color" data-idx="${idx}">
     <option value="Red" ${item.color === "Red" ? "selected" : ""}>Red</option>
@@ -157,24 +157,24 @@
     <option value="Custom" ${item.color === "Custom" ? "selected" : ""}>Custom</option>
   </select>
 
-            </div>
+            </a>
 
-            <div>
+            <a>
               <label>Lighting</label>
               <select class="edit-lighting" data-idx="${idx}">
                 <option value="false" ${!item.lighting ? 'selected' : ''}>No</option>
                 <option value="true" ${item.lighting ? 'selected' : ''}>Yes (+₹100)</option>
               </select>
-            </div>
+            </a>
 
-            <div>
+            <a>
               <label>Quantity</label>
               <div class="qty-control" data-idx="${idx}">
                 <button type="button" class="qty-btn minus">−</button>
                 <input type="number" class="edit-qty" value="${item.quantity}" min="1" data-idx="${idx}" readonly>
                 <button type="button" class="qty-btn plus">+</button>
               </div>
-            </div>
+            </a>
 
             <button class="btn btn-primary btn-save-edit" data-idx="${idx}">
               Save

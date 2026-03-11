@@ -603,12 +603,22 @@ ul {
   font-size: 0.875rem;
 }
 
-.cart-summary {
+.cart-summary{
   background: var(--white);
   border-radius: var(--radius-card);
   box-shadow: var(--shadow-soft);
   padding: 4rem;
   margin-top: 2rem;
+
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+}
+
+.cart-summary .btn{
+  width:100%;
+  max-width: 420px;
+  margin-top:12px;
 }
 
 .cart-grand-total {
@@ -633,15 +643,19 @@ ul {
 }
 
 /* Cart edit form */
-.cart-item-edit {
-  display: none;
-  margin-top: 1rem;
-  padding-top: 1rem;
-  border-top: 1px solid #eee;
+.cart-item-edit{
+  display:none;
+  align-items:center;
+  gap:25px;
+
+  background:#f9f9f9;
+  padding:12px;
+  border-radius:16px;
+  margin-top:8px;
 }
 
-.cart-item-edit.active {
-  display: block;
+.cart-item-edit.active{
+  display:flex;
 }
 
 .cart-item-edit .form-row {
@@ -984,12 +998,12 @@ ul {
 }
 
 /* Change .edit-panel -> .cart-item-edit */
-.cart-item-edit {
+/* .cart-item-edit {
   background: #f9f9f9;
   padding: 12px;
   border-radius: 16px;
   margin-top: 8px;
-}
+} */
 
 /* all inputs inside edit panel */
 .cart-item-edit select,
@@ -1019,14 +1033,14 @@ ul {
 
 /* save button */
 .btn-save-edit{
-  border-radius:50px;      /* oval shape */
+  border-radius:50px;
   padding:8px 18px;
-  font-size:14px;
   height:40px;
-
+  margin-top:15px;
   display:flex;
   align-items:center;
   justify-content:center;
+  align-self:center;
 }
 
 /* Qty control box */
@@ -1073,3 +1087,17 @@ ul {
 .qty-btn:active {
   transform: scale(0.9);
 }
+
+/* ===== Form Error Style ===== */
+
+.error-message{
+  color:#e53935;
+  font-size:12px;
+  margin-top:4px;
+  display:block;
+}
+
+.input-error{
+  border:1px solid #e53935 !important;
+}
+
