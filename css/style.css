@@ -7,9 +7,9 @@
 
 /* -------------------- CSS Variables -------------------- */
 :root {
-  --bg-cream:#e8ccbe;
+  --bg-cream:#ff69b3;
   --bg-cream-dark: #F5F0E8;
- --accent-pink: #C06F78;
+ --accent-pink: #82183f;
 --accent-pink-hover: #A6545E;
 --accent-pink-light: #F1C9CD;
   --text-dark: #161616;
@@ -759,15 +759,8 @@ ul {
   min-width: 160px;
 }
 
-.whatsapp-btn {
-  background: #25D366 !important;
-  color: white !important;
-}
 
-.whatsapp-btn:hover {
-  background: #128C7E !important;
-  color: white !important;
-}
+
 
 /* -------------------- Footer -------------------- */
 .footer {
