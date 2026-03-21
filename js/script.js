@@ -76,7 +76,7 @@ const PRODUCTS = [
   {
     id: '6',
     name: 'Blooming Grace Basket',
-    basePrice: 499,
+    basePrice: 1199,
     weight: "469 gm",
     dimensions: "25 x 10.5 x 30 cm",
     sizeType: "Large",
@@ -86,7 +86,8 @@ const PRODUCTS = [
     // multiple images 👇
     images: [
       "assets/products/Blooming Grace Basket.jpeg",
-      "assets/products/Blooming Grace Basket1.jpeg"
+      "assets/products/Blooming Grace Basket1.jpeg",
+      "assets/products/Blooming Grace Basket2.jpeg"
     ],
 
     colors: ["Pink", "Red", "Custom"],
@@ -216,7 +217,34 @@ const PRODUCTS = [
     },
 
     lightingAvailable: false
-  }
+  },
+  {
+  id: '13',
+  name: 'Sunflower Curtain Tieback',
+  basePrice: 199,
+  maxPrice: 200,
+  displayPrice: 299,
+  weight: "150 gm",
+  dimensions: "15 x 10 x 25 cm",
+  sizeType: "Medium",
+  description: "Flower Curtain Tieback is a beautifully handmade chenille stem floral holder used to decorate curtains. It adds an elegant and aesthetic touch to home interiors and is perfect for living rooms and bedrooms.",
+  makingTime: "Medium item: 3–5 days making + 2 days courier",
+
+  images: [
+    "assets/products/curtain tieback .jpeg",
+    "assets/products/curtain tieback 1.jpeg",
+    "assets/products/curtain tieback 2.jpeg",
+  ],
+
+  colors: ["Orange", "Yellow", "Custom"],
+  customizable: {
+    color: true,
+    flowerType: true,
+    priceVaries: true
+  },
+
+  lightingAvailable: false
+}
 ];
 // ================= CART STORAGE SYSTEM =================
 function getCart() {
