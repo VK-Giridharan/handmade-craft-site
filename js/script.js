@@ -96,7 +96,7 @@ const PRODUCTS = [
   {
     id: '7',
     name: 'Mini Bouquet (Lily)',
-    basePrice: 249,
+    basePrice: 199,
     weight: "80 gm",
     dimensions: "20 x 8 x 25 cm",
     sizeType: "Small",
@@ -112,25 +112,25 @@ const PRODUCTS = [
     colors: ["Red", "Custom"],
     lightingAvailable: false
   },
-  {
-    id: '8',
-    name: 'Rapunzel Mini Bouquet',
-    basePrice: 249,
-    weight: "90 gm",
-    dimensions: "15 x 6 x 28 cm",
-    sizeType: "Medium",
-    description: "Rapunzel Mini Bouquet is a beautifully handcrafted chenille stem flower arrangement designed with soft pastel tones with dreamy aesthetic look  and elegant wrapping.",
-    makingTime: "Medium item: 5–6 days making + 2 days courier",
+  // {
+  //   id: '8',
+  //   name: 'Rapunzel Mini Bouquet',
+  //   basePrice: 249,
+  //   weight: "90 gm",
+  //   dimensions: "15 x 6 x 28 cm",
+  //   sizeType: "Medium",
+  //   description: "Rapunzel Mini Bouquet is a beautifully handcrafted chenille stem flower arrangement designed with soft pastel tones with dreamy aesthetic look  and elegant wrapping.",
+  //   makingTime: "Medium item: 5–6 days making + 2 days courier",
 
-    images: [
-      "assets/products/Rapunzel mini Bouquet (1).jpeg",
-      "assets/products/Rapunzel mini Bouquet (2).jpeg",
-      "assets/products/Rapunzel mini Bouquet (3).jpeg"
-    ],
+  //   images: [
+  //     "assets/products/Rapunzel mini Bouquet (1).jpeg",
+  //     "assets/products/Rapunzel mini Bouquet (2).jpeg",
+  //     "assets/products/Rapunzel mini Bouquet (3).jpeg"
+  //   ],
 
-    colors: ["Pink", "Purple", "Custom"],
-    lightingAvailable: false
-  },
+  //   colors: ["Pink", "Purple", "Custom"],
+  //   lightingAvailable: false
+  // },
   {
     id: '9',
     name: 'Vase Flowers',
@@ -190,34 +190,34 @@ const PRODUCTS = [
 
     lightingAvailable: false
   },
-  {
-    id: '12',
-    name: 'Hand Bouquet',
-    basePrice: 80,
-    maxPrice: 150,
-    displayPrice: 229,
-    weight: "120 gm",
-    dimensions: "20 x 10 x 30 cm",
-    sizeType: "Medium",
-    description: "Hand Bouquet is a beautifully crafted handmade chenille stem flower arrangement perfect for gifting. Customers can customize the bouquet with different flower types based on selection.",
-    makingTime: "Medium item: 3–5 days making + 2 days courier",
+  // {
+  //   id: '12',
+  //   name: 'Hand Bouquet', 
+  //   basePrice: 80,
+  //   maxPrice: 150,
+  //   displayPrice: 229,
+  //   weight: "120 gm",
+  //   dimensions: "20 x 10 x 30 cm",
+  //   sizeType: "Medium",
+  //   description: "Hand Bouquet is a beautifully crafted handmade chenille stem flower arrangement perfect for gifting. Customers can customize the bouquet with different flower types based on selection.",
+  //   makingTime: "Medium item: 3–5 days making + 2 days courier",
 
-    images: [
-      "assets/products/hand banquet (1).jpeg",
-      "assets/products/hand banquet (2).jpeg",
-      "assets/products/hand banquet (3).jpeg",
-      "assets/products/hand banquet (4).jpeg"
-    ],
+  //   images: [
+  //     "assets/products/hand banquet (1).jpeg",
+  //     "assets/products/hand banquet (2).jpeg",
+  //     "assets/products/hand banquet (3).jpeg",
+  //     "assets/products/hand banquet (4).jpeg"
+  //   ],
 
-    colors: ["Red", "Pink", "Yellow", "Custom"],
-    customizable: {
-      color: true,
-      flowerType: true,
-      priceVaries: true
-    },
+  //   colors: ["Red", "Pink", "Yellow", "Custom"],
+  //   customizable: {
+  //     color: true,
+  //     flowerType: true,
+  //     priceVaries: true
+  //   },
 
-    lightingAvailable: false
-  },
+  //   lightingAvailable: false
+  // },
   {
   id: '13',
   name: 'Sunflower Curtain Tieback',
